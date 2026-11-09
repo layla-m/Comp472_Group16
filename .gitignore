@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+data/*.csv
+data/processed/
+results/*.npy
+results/*.csv
