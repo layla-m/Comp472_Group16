@@ -1,0 +1,6 @@
+case,count,share
+both correct,958,0.3992
+only RF correct,496,0.2067
+only DT correct,250,0.1042
+both wrong,696,0.29
+both wrong with the SAME wrong label,516,0.215

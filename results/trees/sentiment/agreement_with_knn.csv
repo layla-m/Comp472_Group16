@@ -1,0 +1,3 @@
+tree_model,knn_val_acc,tree_val_acc,both_correct,only_knn_correct,only_tree_correct,both_wrong,both_wrong_same_label
+DT,0.5842,0.5033,887,515,321,677,478
+RF,0.5842,0.6058,1183,219,271,727,596

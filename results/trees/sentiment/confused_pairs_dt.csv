@@ -1,0 +1,7 @@
+true,predicted,count,share_of_true_class
+Neutral,Negative,310,0.3875
+Neutral,Positive,254,0.3175
+Positive,Negative,181,0.22625
+Positive,Neutral,168,0.21
+Negative,Positive,156,0.195
+Negative,Neutral,123,0.15375

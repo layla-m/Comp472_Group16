@@ -1,0 +1,11 @@
+experiment,n_estimators,max_depth,min_samples_leaf,max_features,train_acc,val_acc,oob_acc,fit_time_s,avg_leaves_per_tree
+max_features,100,None,1,log2,1.0,0.27125,0.202125,294.4,7897.32
+max_features,100,None,1,sqrt,1.0,0.27975,0.2205625,407.0,7422.83
+max_features,100,None,1,0.1,1.0,0.2785,0.22975,642.2,6907.51
+max_features,100,None,1,0.2,1.0,0.275,0.2343125,1155.6,6612.63
+max_depth,100,5,1,sqrt,0.2090625,0.13675,0.1258125,6.9,28.48
+max_depth,100,10,1,sqrt,0.5949375,0.17175,0.1558125,23.2,231.15
+max_depth,100,20,1,sqrt,0.9905625,0.24025,0.2001875,100.5,1541.71
+max_depth,100,None,1,sqrt,1.0,0.27975,0.2205625,409.2,7422.83
+min_samples_leaf,100,None,1,sqrt,1.0,0.27975,0.2205625,411.7,7422.83
+min_samples_leaf,100,None,5,sqrt,0.99825,0.277,0.2370625,189.0,2365.79

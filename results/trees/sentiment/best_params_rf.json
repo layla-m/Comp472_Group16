@@ -1,0 +1,11 @@
+{
+  "params": {
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": 0.2,
+    "n_estimators": 165
+  },
+  "val_acc_at_tuning": 0.61125,
+  "oob_acc": 0.5779166666666666,
+  "quick_run": false
+}

@@ -1,0 +1,11 @@
+{
+  "params": {
+    "max_depth": null,
+    "min_samples_split": 2,
+    "min_samples_leaf": 20,
+    "criterion": "gini"
+  },
+  "train_acc": 0.260125,
+  "val_acc": 0.11975,
+  "quick_run": false
+}
