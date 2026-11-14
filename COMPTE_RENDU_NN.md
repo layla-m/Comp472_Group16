@@ -9,6 +9,12 @@ Une soumission contient 10 000 lignes (`id,label`). Le score Kaggle est l'accura
 
 **Méthode de validation, commune à toutes les itérations** : on découpe les données d'entraînement en 80 % / 20 % (stratifié, seed 42). Le prétraitement est ajusté sur les 80 % seulement. Le nombre d'epochs est choisi par arrêt anticipé (early stopping) sur les 20 %. On réentraîne ensuite sur 100 % des données pendant ce nombre d'epochs, avec 5 seeds, et on moyenne les probabilités.
 
+**Code** : le projet a été réorganisé en package (`comp472/`, voir [README.md](README.md)). Les commandes citées dans les sections ci-dessous (`python nn_v2.py …`, `make_iterN.py`, etc.) sont celles de l'ancien code, conservé sur la branche git `sauvegarde-originale`. Le README donne leur équivalent (`python -m comp472 …`). La réorganisation a été vérifiée : elle reproduit les mêmes résultats à l'identique.
+
+**Figures** : `python -m comp472 plots` génère 15 figures dans [results/figures/](results/figures/). Les principales : scores par itération (`01`), comparaison avec le groupe (`02`), recherches d'hyperparamètres (`04`, `05`), structure de voisinage (`06`), réglage du kNN (`07`, `08`), pseudo-étiquetage (`09`, `12`), poids et complémentarité de l'ensemble (`10`, `11`), sous-ensembles d'iter10 (`14`).
+
+![Scores par itération](results/figures/01_scores_iterations.png)
+
 ## Récapitulatif
 
 | Itération | Fichier | Val. image | Val. sentiment | Val. moyenne | Kaggle |
