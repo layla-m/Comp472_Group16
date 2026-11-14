@@ -1,0 +1,44 @@
+{'k': 1, 'weight': 'uniform', 'val_acc': 0.572}
+{'k': 3, 'weight': 'uniform', 'val_acc': 0.4467}
+{'k': 3, 'weight': 'inv', 'val_acc': 0.5593}
+{'k': 3, 'weight': 'exp0.02', 'val_acc': 0.574}
+{'k': 3, 'weight': 'exp0.05', 'val_acc': 0.5753}
+{'k': 3, 'weight': 'exp0.1', 'val_acc': 0.5683}
+{'k': 5, 'weight': 'uniform', 'val_acc': 0.4492}
+{'k': 5, 'weight': 'inv', 'val_acc': 0.5387}
+{'k': 5, 'weight': 'exp0.02', 'val_acc': 0.5795}
+{'k': 5, 'weight': 'exp0.05', 'val_acc': 0.5783}
+{'k': 5, 'weight': 'exp0.1', 'val_acc': 0.5643}
+{'k': 7, 'weight': 'uniform', 'val_acc': 0.4445}
+{'k': 7, 'weight': 'inv', 'val_acc': 0.5185}
+{'k': 7, 'weight': 'exp0.02', 'val_acc': 0.5823}
+{'k': 7, 'weight': 'exp0.05', 'val_acc': 0.582}
+{'k': 7, 'weight': 'exp0.1', 'val_acc': 0.56}
+{'k': 10, 'weight': 'uniform', 'val_acc': 0.4305}
+{'k': 10, 'weight': 'inv', 'val_acc': 0.4973}
+{'k': 10, 'weight': 'exp0.02', 'val_acc': 0.5853}
+{'k': 10, 'weight': 'exp0.05', 'val_acc': 0.5855}
+{'k': 10, 'weight': 'exp0.1', 'val_acc': 0.5545}
+{'k': 15, 'weight': 'uniform', 'val_acc': 0.4123}
+{'k': 15, 'weight': 'inv', 'val_acc': 0.468}
+{'k': 15, 'weight': 'exp0.02', 'val_acc': 0.585}
+{'k': 15, 'weight': 'exp0.05', 'val_acc': 0.5827}
+{'k': 15, 'weight': 'exp0.1', 'val_acc': 0.5425}
+{'k': 20, 'weight': 'uniform', 'val_acc': 0.398}
+{'k': 20, 'weight': 'inv', 'val_acc': 0.4432}
+{'k': 20, 'weight': 'exp0.02', 'val_acc': 0.5873}
+{'k': 20, 'weight': 'exp0.05', 'val_acc': 0.5835}
+{'k': 20, 'weight': 'exp0.1', 'val_acc': 0.533}
+{'k': 30, 'weight': 'uniform', 'val_acc': 0.3698}
+{'k': 30, 'weight': 'inv', 'val_acc': 0.411}
+{'k': 30, 'weight': 'exp0.02', 'val_acc': 0.5885}
+{'k': 30, 'weight': 'exp0.05', 'val_acc': 0.5787}
+{'k': 30, 'weight': 'exp0.1', 'val_acc': 0.5212}
+{'k': 50, 'weight': 'uniform', 'val_acc': 0.3422}
+{'k': 50, 'weight': 'inv', 'val_acc': 0.366}
+{'k': 50, 'weight': 'exp0.02', 'val_acc': 0.5893}
+{'k': 50, 'weight': 'exp0.05', 'val_acc': 0.5725}
+{'k': 50, 'weight': 'exp0.1', 'val_acc': 0.5028}
+BEST k=50 weight=exp0.02 val_acc=0.5893
+saved ens/knn_image_val.npy and ens/knn_image_test.npy
+CHAIN_DONE

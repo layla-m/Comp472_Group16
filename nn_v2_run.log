@@ -1,0 +1,6 @@
+[image] val_acc=0.5085 best_epoch=51 (1902s)
+/home/mathieu/projet/machine_learning/tutorial/rendu_AI/nn_v2.py:90: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  loader = DataLoader(TensorDataset(torch.from_numpy(X_tr), torch.from_numpy(y_tr)),
+[sentiment] val_acc=0.6817 best_epoch=47 (68s)
+Validation: image=0.5085 sentiment=0.6817 overall=0.5951
+Saved /home/mathieu/projet/machine_learning/tutorial/rendu_AI/iter2.csv

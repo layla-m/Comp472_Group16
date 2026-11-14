@@ -1,0 +1,27 @@
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.prefix, expected /home/mathieu/projet/machine_learning/tutorial/venv, got /home/mathieu/projet/machine_learning/tutorial/rendu_AI/../venv
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.exec_prefix, expected /home/mathieu/projet/machine_learning/tutorial/venv, got /home/mathieu/projet/machine_learning/tutorial/rendu_AI/../venv
+{'variant': 'base', 'val_acc': np.float64(0.6729), 'train_acc': np.float64(0.8718), 'best_epoch': 11, 'seconds': 48.8}
+{'variant': 'hidden=[256]', 'val_acc': np.float64(0.6679), 'train_acc': np.float64(0.9611), 'best_epoch': 22, 'seconds': 37.4}
+{'variant': 'hidden=[256,64]', 'val_acc': np.float64(0.6792), 'train_acc': np.float64(0.785), 'best_epoch': 8, 'seconds': 18.1}
+{'variant': 'hidden=[1024,256]', 'val_acc': np.float64(0.6692), 'train_acc': np.float64(0.7712), 'best_epoch': 3, 'seconds': 38.2}
+{'variant': 'hidden=[1024,512,128]', 'val_acc': np.float64(0.6696), 'train_acc': np.float64(0.8421), 'best_epoch': 8, 'seconds': 60.1}
+{'variant': 'dropout=0.3', 'val_acc': np.float64(0.6629), 'train_acc': np.float64(0.9006), 'best_epoch': 7, 'seconds': 33.9}
+{'variant': 'dropout=0.7', 'val_acc': np.float64(0.6808), 'train_acc': np.float64(0.9411), 'best_epoch': 44, 'seconds': 75.2}
+{'variant': 'lr=1e-3', 'val_acc': np.float64(0.6721), 'train_acc': np.float64(0.8755), 'best_epoch': 10, 'seconds': 29.7}
+{'variant': 'lr=1e-4', 'val_acc': np.float64(0.6721), 'train_acc': np.float64(0.8075), 'best_epoch': 18, 'seconds': 56.8}
+{'variant': 'wd=0.1', 'val_acc': np.float64(0.6712), 'train_acc': np.float64(0.8747), 'best_epoch': 11, 'seconds': 33.4}
+{'variant': 'batch=64', 'val_acc': np.float64(0.6771), 'train_acc': np.float64(0.9284), 'best_epoch': 16, 'seconds': 100.3}
+{'variant': 'batch=256', 'val_acc': np.float64(0.6688), 'train_acc': np.float64(0.8599), 'best_epoch': 11, 'seconds': 24.8}
+              variant  val_acc  train_acc  best_epoch  seconds
+          dropout=0.7   0.6808     0.9411          44     75.2
+      hidden=[256,64]   0.6792     0.7850           8     18.1
+             batch=64   0.6771     0.9284          16    100.3
+                 base   0.6729     0.8718          11     48.8
+              lr=1e-4   0.6721     0.8075          18     56.8
+              lr=1e-3   0.6721     0.8755          10     29.7
+               wd=0.1   0.6712     0.8747          11     33.4
+hidden=[1024,512,128]   0.6696     0.8421           8     60.1
+    hidden=[1024,256]   0.6692     0.7712           3     38.2
+            batch=256   0.6688     0.8599          11     24.8
+         hidden=[256]   0.6679     0.9611          22     37.4
+          dropout=0.3   0.6629     0.9006           7     33.9

@@ -1,0 +1,5 @@
+config: {'image': {'hidden': [8192], 'dropout': 0.3, 'in_dropout': 0.5, 'lr': 0.001, 'weight_decay': 0.01, 'batch_size': 128, 'max_epochs': 100, 'patience': 15, 'sqrt_features': True, 'row_norm': False, 'l2_norm': False, 'mixup': 0.0, 'smoothing': 0.1}, 'sentiment': {'hidden': [512, 128], 'dropout': 0.7, 'in_dropout': 0.0, 'lr': 0.0005, 'weight_decay': 0.01, 'batch_size': 128, 'max_epochs': 60, 'patience': 10, 'sqrt_features': False, 'row_norm': False, 'l2_norm': False, 'mixup': 0.0, 'smoothing': 0.1}}
+[image] val_acc=0.5155 best_epoch=95 (1105s)
+[sentiment] val_acc=0.6817 best_epoch=47 (56s)
+Validation: image=0.5155 sentiment=0.6817 overall=0.5986
+Saved /home/mathieu/projet/machine_learning/tutorial/rendu_AI/iter4.csv

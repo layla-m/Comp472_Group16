@@ -1,0 +1,18 @@
+iter7_nn   alone 0.5085
+iter8_nn   alone 0.5155
+iter10_a   alone 0.4945
+iter10_b   alone 0.4547
+iter10_c   alone 0.4645
+ens 0.6385  nn-mean 0.5312  w1=0.65 w2=0.65  iter7_nn+iter8_nn+iter10_a+iter10_b+iter10_c
+ens 0.6380  nn-mean 0.5305  w1=0.65 w2=0.6  iter7_nn+iter8_nn+iter10_a+iter10_b
+ens 0.6380  nn-mean 0.5405  w1=0.75 w2=0.75  iter7_nn+iter8_nn+iter10_a+iter10_c
+ens 0.6375  nn-mean 0.5122  w1=0.6 w2=0.6  iter7_nn+iter10_a+iter10_b
+ens 0.6375  nn-mean 0.5168  w1=0.65 w2=0.6  iter8_nn+iter10_a+iter10_b+iter10_c
+ens 0.6372  nn-mean 0.5390  w1=0.75 w2=0.7  iter7_nn+iter8_nn+iter10_a
+ens 0.6370  nn-mean 0.5373  w1=0.7 w2=0.7  iter7_nn+iter8_nn
+ens 0.6368  nn-mean 0.5138  w1=0.65 w2=0.6  iter8_nn+iter10_a+iter10_b
+ens 0.6362  nn-mean 0.5220  w1=0.65 w2=0.6  iter7_nn+iter8_nn+iter10_b
+ens 0.6360  nn-mean 0.5260  w1=0.75 w2=0.7  iter7_nn+iter10_a+iter10_c
+BEST iter7_nn+iter8_nn+iter10_a+iter10_b+iter10_c val_acc=0.6385 (iter9 val 0.637)
+Saved iter10.csv (agreement with iter9: 0.9646)
+DONE

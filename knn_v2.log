@@ -1,0 +1,42 @@
+p=0.3 idf=False: best k=100 tau=0.02 knn=0.5810 ens=0.6312 (w=0.65)
+p=0.3 idf=True: best k=75 tau=0.02 knn=0.5875 ens=0.6328 (w=0.7)
+p=0.4 idf=False: best k=50 tau=0.02 knn=0.5845 ens=0.6338 (w=0.7)
+p=0.4 idf=True: best k=20 tau=0.03 knn=0.5970 ens=0.6325 (w=0.65)
+p=0.5 idf=False: best k=30 tau=0.02 knn=0.5885 ens=0.6302 (w=0.7)
+p=0.5 idf=True: best k=20 tau=0.03 knn=0.5982 ens=0.6320 (w=0.65)
+p=0.7 idf=False: best k=200 tau=0.02 knn=0.5833 ens=0.6282 (w=0.6)
+p=0.7 idf=True: best k=50 tau=0.02 knn=0.5897 ens=0.6302 (w=0.6)
+STEP1 BEST p=0.4 idf=False k=50 tau=0.02 knn=0.5845 ens=0.6338 w=0.7
+thr=0.0 pw=0.5 k=50: best ens so far 0.6350
+thr=0.0 pw=0.5 k=100: best ens so far 0.6365
+thr=0.0 pw=0.5 k=200: best ens so far 0.6365
+thr=0.0 pw=1.0 k=50: best ens so far 0.6365
+thr=0.0 pw=1.0 k=100: best ens so far 0.6365
+thr=0.0 pw=1.0 k=200: best ens so far 0.6365
+thr=0.3 pw=0.5 k=50: best ens so far 0.6365
+thr=0.3 pw=0.5 k=100: best ens so far 0.6370
+thr=0.3 pw=0.5 k=200: best ens so far 0.6370
+thr=0.3 pw=1.0 k=50: best ens so far 0.6370
+thr=0.3 pw=1.0 k=100: best ens so far 0.6370
+thr=0.3 pw=1.0 k=200: best ens so far 0.6370
+thr=0.5 pw=0.5 k=50: best ens so far 0.6370
+thr=0.5 pw=0.5 k=100: best ens so far 0.6370
+thr=0.5 pw=0.5 k=200: best ens so far 0.6370
+thr=0.5 pw=1.0 k=50: best ens so far 0.6370
+thr=0.5 pw=1.0 k=100: best ens so far 0.6370
+thr=0.5 pw=1.0 k=200: best ens so far 0.6370
+thr=0.7 pw=0.5 k=50: best ens so far 0.6370
+thr=0.7 pw=0.5 k=100: best ens so far 0.6370
+thr=0.7 pw=0.5 k=200: best ens so far 0.6370
+thr=0.7 pw=1.0 k=50: best ens so far 0.6370
+thr=0.7 pw=1.0 k=100: best ens so far 0.6370
+thr=0.7 pw=1.0 k=200: best ens so far 0.6370
+thr=0.9 pw=0.5 k=50: best ens so far 0.6370
+thr=0.9 pw=0.5 k=100: best ens so far 0.6370
+thr=0.9 pw=0.5 k=200: best ens so far 0.6370
+thr=0.9 pw=1.0 k=50: best ens so far 0.6370
+thr=0.9 pw=1.0 k=100: best ens so far 0.6370
+thr=0.9 pw=1.0 k=200: best ens so far 0.6370
+STEP2 BEST thr=0.3 pw=0.5 k=100 tau=0.02 knn=0.5940 ens=0.6370 w=0.7
+USING step 2 val ens=0.6370 (iter8 val 0.6298)
+Saved iter9.csv (agreement with iter8: 0.9727)

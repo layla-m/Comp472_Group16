@@ -1,0 +1,27 @@
+{'round': '1', 'variant': 'base[2048]', 'val_acc': 0.4218, 'best_epoch': 42, 'seconds': 237.1, 'cfg': '{}'}
+{'round': '1', 'variant': 'row_norm', 'val_acc': 0.4238, 'best_epoch': 49, 'seconds': 230.3, 'cfg': "{'row_norm': True}"}
+{'round': '1', 'variant': 'in_drop=0.2', 'val_acc': 0.466, 'best_epoch': 51, 'seconds': 219.0, 'cfg': "{'in_dropout': 0.2}"}
+{'round': '1', 'variant': 'in_drop=0.4', 'val_acc': 0.479, 'best_epoch': 48, 'seconds': 230.4, 'cfg': "{'in_dropout': 0.4}"}
+{'round': '2', 'variant': 'in_drop=0.5', 'val_acc': 0.4808, 'best_epoch': 57, 'seconds': 219.4, 'cfg': "{'in_dropout': 0.5}"}
+{'round': '2', 'variant': 'in_drop=0.6', 'val_acc': 0.4557, 'best_epoch': 56, 'seconds': 486.1, 'cfg': "{'in_dropout': 0.6}"}
+{'round': '2', 'variant': 'in_drop=0.7', 'val_acc': 0.4315, 'best_epoch': 50, 'seconds': 156.2, 'cfg': "{'in_dropout': 0.7}"}
+{'round': '2', 'variant': 'in_drop=0.5,rn', 'val_acc': 0.4805, 'best_epoch': 49, 'seconds': 142.2, 'cfg': "{'in_dropout': 0.5, 'row_norm': True}"}
+{'round': '2', 'variant': 'in_drop=0.5,[2048,1024]', 'val_acc': 0.4492, 'best_epoch': 57, 'seconds': 306.7, 'cfg': "{'in_dropout': 0.5, 'hidden': [2048, 1024]}"}
+{'round': '2', 'variant': 'in_drop=0.5,[4096]', 'val_acc': 0.496, 'best_epoch': 52, 'seconds': 260.5, 'cfg': "{'in_dropout': 0.5, 'hidden': [4096]}"}
+{'round': '2', 'variant': 'in_drop=0.5,d=0.3', 'val_acc': 0.4875, 'best_epoch': 52, 'seconds': 132.5, 'cfg': "{'in_dropout': 0.5, 'dropout': 0.3}"}
+{'round': '3a', 'variant': '[4096],in=0.5,d=0.3', 'val_acc': 0.5092, 'best_epoch': 57, 'seconds': 5770.6, 'cfg': "{'hidden': [4096], 'in_dropout': 0.5, 'dropout': 0.3}"}
+{'round': '3b', 'variant': '[4096],in=0.5,ep=100', 'val_acc': 0.508, 'best_epoch': 93, 'seconds': 6139.9, 'cfg': "{'hidden': [4096], 'in_dropout': 0.5, 'max_epochs': 100, 'patience': 15}"}
+{'round': '3a', 'variant': '[8192],in=0.5', 'val_acc': 0.514, 'best_epoch': 55, 'seconds': 900.9, 'cfg': "{'hidden': [8192], 'in_dropout': 0.5}"}
+{'round': '3b', 'variant': '[4096],in=0.5,mixup=0.2', 'val_acc': 0.509, 'best_epoch': 83, 'seconds': 1806.9, 'cfg': "{'hidden': [4096], 'in_dropout': 0.5, 'mixup': 0.2, 'max_epochs': 100, 'patience': 15}"}
+{'round': '4', 'variant': 'tfidf', 'val_acc': 0.51, 'best_epoch': 56, 'seconds': 238.6, 'cfg': "{'tfidf': True}"}
+{'round': '4', 'variant': 'tfidf+row_norm', 'val_acc': 0.5098, 'best_epoch': 59, 'seconds': 270.5, 'cfg': "{'tfidf': True, 'row_norm': True}"}
+{'round': '4', 'variant': 'pca_whiten_0.99', 'val_acc': 0.4335, 'best_epoch': 60, 'seconds': 280.3, 'cfg': "{'pca': 0.99}"}
+{'round': '4', 'variant': 'pca_whiten_0.99,in=0.2', 'val_acc': 0.408, 'best_epoch': 59, 'seconds': 237.0, 'cfg': "{'pca': 0.99, 'in_dropout': 0.2}"}
+{'round': '5', 'variant': 'thin=0.3', 'val_acc': 0.4898, 'best_epoch': 59, 'seconds': 290.3, 'cfg': "{'thin': 0.3}"}
+{'round': '5', 'variant': 'thin=0.5', 'val_acc': 0.442, 'best_epoch': 52, 'seconds': 256.2, 'cfg': "{'thin': 0.5}"}
+{'round': '5', 'variant': 'thin=0.5,in=0.3', 'val_acc': 0.4718, 'best_epoch': 58, 'seconds': 259.1, 'cfg': "{'thin': 0.5, 'in_dropout': 0.3}"}
+{'round': '5', 'variant': 'noise=0.3', 'val_acc': 0.5045, 'best_epoch': 59, 'seconds': 235.8, 'cfg': "{'noise': 0.3}"}
+{'round': '5', 'variant': 'swa_from_40', 'val_acc': 0.5108, 'best_epoch': 59, 'seconds': 267.7, 'cfg': "{'swa_start': 40, 'patience': 60}"}
+{'round': '6', 'variant': 'hellinger_nostd', 'val_acc': 0.5012, 'best_epoch': 53, 'seconds': 296.6, 'cfg': "{'row_norm': True, 'std': False}"}
+{'round': '6', 'variant': 'hellinger_nostd,in=0.3', 'val_acc': 0.5015, 'best_epoch': 55, 'seconds': 250.5, 'cfg': "{'row_norm': True, 'std': False, 'in_dropout': 0.3}"}
+{'round': '6', 'variant': 'sqrtL2_nostd', 'val_acc': 0.4995, 'best_epoch': 60, 'seconds': 299.1, 'cfg': "{'std': False}"}

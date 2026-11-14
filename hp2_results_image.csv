@@ -1,0 +1,28 @@
+round,variant,val_acc,best_epoch,seconds,cfg
+1,base[2048],0.4218,42,237.1,{}
+1,row_norm,0.4238,49,230.3,{'row_norm': True}
+1,in_drop=0.2,0.466,51,219.0,{'in_dropout': 0.2}
+1,in_drop=0.4,0.479,48,230.4,{'in_dropout': 0.4}
+2,in_drop=0.5,0.4808,57,219.4,{'in_dropout': 0.5}
+2,in_drop=0.6,0.4557,56,486.1,{'in_dropout': 0.6}
+2,in_drop=0.7,0.4315,50,156.2,{'in_dropout': 0.7}
+2,"in_drop=0.5,rn",0.4805,49,142.2,"{'in_dropout': 0.5, 'row_norm': True}"
+2,"in_drop=0.5,[2048,1024]",0.4492,57,306.7,"{'in_dropout': 0.5, 'hidden': [2048, 1024]}"
+2,"in_drop=0.5,[4096]",0.496,52,260.5,"{'in_dropout': 0.5, 'hidden': [4096]}"
+2,"in_drop=0.5,d=0.3",0.4875,52,132.5,"{'in_dropout': 0.5, 'dropout': 0.3}"
+3a,"[4096],in=0.5,d=0.3",0.5092,57,5770.6,"{'hidden': [4096], 'in_dropout': 0.5, 'dropout': 0.3}"
+3b,"[4096],in=0.5,ep=100",0.508,93,6139.9,"{'hidden': [4096], 'in_dropout': 0.5, 'max_epochs': 100, 'patience': 15}"
+3a,"[8192],in=0.5",0.514,55,900.9,"{'hidden': [8192], 'in_dropout': 0.5}"
+3b,"[4096],in=0.5,mixup=0.2",0.509,83,1806.9,"{'hidden': [4096], 'in_dropout': 0.5, 'mixup': 0.2, 'max_epochs': 100, 'patience': 15}"
+4,tfidf,0.51,56,238.6,{'tfidf': True}
+4,tfidf+row_norm,0.5098,59,270.5,"{'tfidf': True, 'row_norm': True}"
+4,pca_whiten_0.99,0.4335,60,280.3,{'pca': 0.99}
+4,"pca_whiten_0.99,in=0.2",0.408,59,237.0,"{'pca': 0.99, 'in_dropout': 0.2}"
+5,thin=0.3,0.4898,59,290.3,{'thin': 0.3}
+5,thin=0.5,0.442,52,256.2,{'thin': 0.5}
+5,"thin=0.5,in=0.3",0.4718,58,259.1,"{'thin': 0.5, 'in_dropout': 0.3}"
+5,noise=0.3,0.5045,59,235.8,{'noise': 0.3}
+5,swa_from_40,0.5108,59,267.7,"{'swa_start': 40, 'patience': 60}"
+6,hellinger_nostd,0.5012,53,296.6,"{'row_norm': True, 'std': False}"
+6,"hellinger_nostd,in=0.3",0.5015,55,250.5,"{'row_norm': True, 'std': False, 'in_dropout': 0.3}"
+6,sqrtL2_nostd,0.4995,60,299.1,{'std': False}

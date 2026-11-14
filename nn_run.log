@@ -1,0 +1,10 @@
+
+========== IMAGE ==========
+train (20000, 500), test (5000, 500), classes=50
+  epoch   1  loss=3.4841  train_acc=0.4908  val_acc=0.2787
+  epoch   2  loss=2.7377  train_acc=0.6715  val_acc=0.3272
+  epoch   3  loss=2.3818  train_acc=0.7755  val_acc=0.3438
+  epoch   4  loss=2.1283  train_acc=0.8524  val_acc=0.3500
+  epoch   5  loss=1.9258  train_acc=0.9133  val_acc=0.3575
+  epoch   6  loss=1.7551  train_acc=0.9546  val_acc=0.3635
+  epoch   7  loss=1.6225  train_acc=0.9759  val_acc=0.3723

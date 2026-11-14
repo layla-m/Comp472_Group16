@@ -1,0 +1,27 @@
+A_base seed0: val=0.6813 ep=47
+A_base seed1: val=0.6717 ep=10
+A_base seed2: val=0.6783 ep=35
+B_[256,64] seed0: val=0.6750 ep=27
+B_[256,64] seed1: val=0.6754 ep=33
+B_[256,64] seed2: val=0.6763 ep=29
+C_[1024] seed0: val=0.6750 ep=8
+C_[1024] seed1: val=0.6700 ep=16
+C_[1024] seed2: val=0.6754 ep=5
+D_mixup0.2 seed0: val=0.6767 ep=35
+D_mixup0.2 seed1: val=0.6754 ep=24
+D_mixup0.2 seed2: val=0.6754 ep=35
+ENS A_base x3 seeds: 0.6800
+ENS B_[256,64] x3 seeds: 0.6750
+ENS C_[1024] x3 seeds: 0.6804
+ENS D_mixup0.2 x3 seeds: 0.6775
+ENS A_base+B_[256,64]: 0.6779
+ENS A_base+C_[1024]: 0.6817
+ENS A_base+D_mixup0.2: 0.6779
+ENS B_[256,64]+C_[1024]: 0.6763
+ENS B_[256,64]+D_mixup0.2: 0.6771
+ENS C_[1024]+D_mixup0.2: 0.6813
+ENS A_base+B_[256,64]+C_[1024]: 0.6800
+ENS A_base+B_[256,64]+D_mixup0.2: 0.6804
+ENS A_base+C_[1024]+D_mixup0.2: 0.6837
+ENS B_[256,64]+C_[1024]+D_mixup0.2: 0.6804
+ENS A_base+B_[256,64]+C_[1024]+D_mixup0.2: 0.6808

@@ -1,0 +1,4 @@
+[image] val_acc=0.5075 best_epoch=52 (474s)
+[sentiment] val_acc=0.6817 best_epoch=47 (54s)
+Validation: image=0.5075 sentiment=0.6817 overall=0.5946
+Saved /home/mathieu/projet/machine_learning/tutorial/rendu_AI/iter3.csv

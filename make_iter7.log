@@ -1,0 +1,24 @@
+w_nn=0.00  val_acc=0.5893
+w_nn=0.05  val_acc=0.5915
+w_nn=0.10  val_acc=0.5958
+w_nn=0.15  val_acc=0.5985
+w_nn=0.20  val_acc=0.6018
+w_nn=0.25  val_acc=0.6062
+w_nn=0.30  val_acc=0.6115
+w_nn=0.35  val_acc=0.6150
+w_nn=0.40  val_acc=0.6192
+w_nn=0.45  val_acc=0.6220
+w_nn=0.50  val_acc=0.6250
+w_nn=0.55  val_acc=0.6270
+w_nn=0.60  val_acc=0.6265
+w_nn=0.65  val_acc=0.6252
+w_nn=0.70  val_acc=0.6232
+w_nn=0.75  val_acc=0.6195
+w_nn=0.80  val_acc=0.6102
+w_nn=0.85  val_acc=0.5972
+w_nn=0.90  val_acc=0.5740
+w_nn=0.95  val_acc=0.5393
+w_nn=1.00  val_acc=0.5085
+BEST w_nn=0.55 val_acc=0.6270  (nn alone 0.5085, knn alone 0.5893)
+Saved iter7.csv
+DONE

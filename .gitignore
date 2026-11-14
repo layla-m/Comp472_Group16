@@ -1,0 +1,11 @@
+# Kaggle data (download from the competition page, ~200 MB)
+*_train.csv
+*_test.csv
+image_test-selected-columns.csv
+sample_submission.csv
+data/
+
+# Windows / Python artefacts
+*:Zone.Identifier
+__pycache__/
+*.pyc

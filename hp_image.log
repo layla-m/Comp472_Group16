@@ -1,0 +1,23 @@
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.prefix, expected /home/mathieu/projet/machine_learning/tutorial/venv, got /home/mathieu/projet/machine_learning/tutorial/rendu_AI/../venv
+<frozen site>:107: RuntimeWarning: Unexpected value in sys.exec_prefix, expected /home/mathieu/projet/machine_learning/tutorial/venv, got /home/mathieu/projet/machine_learning/tutorial/rendu_AI/../venv
+{'variant': 'base', 'val_acc': np.float64(0.397), 'train_acc': np.float64(1.0), 'best_epoch': 49, 'seconds': 315.4}
+{'variant': 'no_sqrt', 'val_acc': np.float64(0.401), 'train_acc': np.float64(1.0), 'best_epoch': 39, 'seconds': 269.0}
+{'variant': 'hidden=[1024]', 'val_acc': np.float64(0.385), 'train_acc': np.float64(1.0), 'best_epoch': 37, 'seconds': 71.9}
+{'variant': 'hidden=[2048]', 'val_acc': np.float64(0.4235), 'train_acc': np.float64(1.0), 'best_epoch': 47, 'seconds': 147.4}
+{'variant': 'hidden=[2048,1024]', 'val_acc': np.float64(0.4288), 'train_acc': np.float64(1.0), 'best_epoch': 59, 'seconds': 376.8}
+{'variant': 'dropout=0.3', 'val_acc': np.float64(0.3878), 'train_acc': np.float64(1.0), 'best_epoch': 26, 'seconds': 84.7}
+{'variant': 'dropout=0.7', 'val_acc': np.float64(0.3802), 'train_acc': np.float64(0.9828), 'best_epoch': 53, 'seconds': 178.2}
+{'variant': 'wd=0.05', 'val_acc': np.float64(0.3898), 'train_acc': np.float64(0.9999), 'best_epoch': 25, 'seconds': 106.6}
+{'variant': 'lr=3e-3', 'val_acc': np.float64(0.3978), 'train_acc': np.float64(1.0), 'best_epoch': 32, 'seconds': 101.7}
+{'variant': 'lr=3e-4', 'val_acc': np.float64(0.3733), 'train_acc': np.float64(0.9998), 'best_epoch': 54, 'seconds': 344.7}
+           variant  val_acc  train_acc  best_epoch  seconds
+hidden=[2048,1024]   0.4288     1.0000          59    376.8
+     hidden=[2048]   0.4235     1.0000          47    147.4
+           no_sqrt   0.4010     1.0000          39    269.0
+           lr=3e-3   0.3978     1.0000          32    101.7
+              base   0.3970     1.0000          49    315.4
+           wd=0.05   0.3898     0.9999          25    106.6
+       dropout=0.3   0.3878     1.0000          26     84.7
+     hidden=[1024]   0.3850     1.0000          37     71.9
+       dropout=0.7   0.3802     0.9828          53    178.2
+           lr=3e-4   0.3733     0.9998          54    344.7
