@@ -30,7 +30,7 @@ Une soumission contient 10 000 lignes (`id,label`). Le score Kaggle est l'accura
 | iter9 | `iter9.csv` | **0.637** (réseaux + kNN affiné + pseudo-étiquetage) | 0.6817 | **0.659** | **0.661** |
 | iter10a | `iter10a.csv` | 0.6372 (iter9 + réseau a) | 0.6817 | 0.659 | **0.660** |
 | iter10 | `iter10.csv` | 0.6385 (5 réseaux + kNN + pseudo-étiquetage) | 0.6817 | 0.660 | non soumis |
-| iter11 | `iter11.csv` | **0.6515** (iter9 + label spreading) | 0.6817 | **0.667** (moyenne de validation) | à soumettre, ≈ 0.667–0.669 attendu |
+| iter11 | `iter11.csv` | **0.6515** (iter9 + label spreading) | 0.6817 | **0.667** | **0.667** |
 
 La moyenne de validation prédit bien le score Kaggle, en le sous-estimant légèrement : 0.535 contre 0.539 pour iter1, 0.595 contre 0.609 pour iter2. Le réentraînement sur 100 % des données et la moyenne sur 5 seeds apportent probablement ce petit bonus. On se sert donc de la validation comme indicateur.
 
@@ -433,7 +433,7 @@ La validation suit le protocole d'iter9 : les 4 000 images de validation jouent 
 | **iter9 + label spreading, w = 0.5** | **0.6515** |
 | 10 meilleurs réglages | de 0.648 à 0.6515 |
 
-**Contrôle du sur-réglage** : 4 000 images seulement, et une grille de plus de 50 réglages. On a donc vérifié autrement : on règle (paramètres et w) sur une moitié de la validation et on mesure sur l'autre moitié, 5 tirages × 2 sens. Le label spreading améliore **les 10 moitiés gardées de côté**, de +1.0 point en moyenne (0.638 → 0.648, gains de +0.6 à +1.5). Les réglages choisis sont toujours les mêmes : k = 20 ou 30, τ = 0.05, α = 0.2 ou 0.35, sans a priori. Le gain est donc réel. iter11 est d'accord avec iter9 sur 86 % des images de test. En reprenant l'écart habituel entre validation et Kaggle (+0.2 à +0.3 point), on attend **≈ 0.667** sur Kaggle.
+**Contrôle du sur-réglage** : 4 000 images seulement, et une grille de plus de 50 réglages. On a donc vérifié autrement : on règle (paramètres et w) sur une moitié de la validation et on mesure sur l'autre moitié, 5 tirages × 2 sens. Le label spreading améliore **les 10 moitiés gardées de côté**, de +1.0 point en moyenne (0.638 → 0.648, gains de +0.6 à +1.5). Les réglages choisis sont toujours les mêmes : k = 20 ou 30, τ = 0.05, α = 0.2 ou 0.35, sans a priori. Le gain est donc réel. iter11 est d'accord avec iter9 sur 86 % des images de test. En reprenant l'écart habituel entre validation et Kaggle (+0.2 à +0.3 point), on attendait ≈ 0.667 sur Kaggle : **résultat Kaggle 0.667**, notre meilleur score.
 
 **Pistes testées et écartées** (scripts d'exploration, non intégrés au package) :
 

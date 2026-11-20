@@ -4,7 +4,7 @@ Deux tâches de classification, une seule soumission Kaggle de 10 000 lignes :
 - **image** : 500 features (histogrammes de « mots visuels » normalisés L2), 50 classes ;
 - **sentiment** : 768 features (embeddings de texte), 3 classes.
 
-**Meilleure soumission : `results/submissions/iter9.csv`, Kaggle 0.661.** Candidate : `results/submissions/iter11.csv` (iter9 + label spreading, val. image 0.6515 contre 0.637), pas encore soumise (objectif 0.651, meilleur score de la compétition 0.671). L'historique complet des itérations est dans [COMPTE_RENDU_NN.md](COMPTE_RENDU_NN.md), et les figures dans [results/figures/](results/figures/).
+**Meilleure soumission : `results/submissions/iter11.csv`, Kaggle 0.667** (iter9 + label spreading ; iter9 : 0.661) (objectif 0.651, meilleur score de la compétition 0.671). L'historique complet des itérations est dans [COMPTE_RENDU_NN.md](COMPTE_RENDU_NN.md), et les figures dans [results/figures/](results/figures/).
 
 ## Installation
 
