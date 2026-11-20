@@ -109,6 +109,19 @@ class KNNParams:
 
 KNN_ITER9 = KNNParams()
 
+
+@dataclass(frozen=True)
+class LabelSpreadingParams:
+    """Label spreading on the k-NN graph of labelled + unlabelled images (iter11).
+    Settings chosen on the validation split (grid in COMPTE_RENDU_NN.md, iter11)."""
+    k: int = 20               # neighbours per node (graph symmetrised afterwards)
+    tau: float = 0.05         # temperature of the exponential edge weights
+    alpha: float = 0.35       # share of the propagated labels at each step (1 - alpha: initial labels)
+    iters: int = 30
+
+
+LS_ITER11 = LabelSpreadingParams()
+
 # first Hellinger k-NN (iter6-8): grid over k and the weighting
 @dataclass(frozen=True)
 class KNNGrid:

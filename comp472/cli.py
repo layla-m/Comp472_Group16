@@ -8,7 +8,7 @@ Command line: python -m comp472 <command> ...
   seed-study                 seed / architecture ensembles on sentiment
   knn-grid                   first Hellinger k-NN (probabilities "knn", iter6-8)
   knn-search                 tuned k-NN + pseudo-labelling search (settings of iter9)
-  submit <recipe>            build an ensemble submission (iter6 ... iter10)
+  submit <recipe>            build an ensemble submission (iter6 ... iter11)
   plots [name ...]           draw the figures in results/figures
   verify [--fast]            check that the saved results are reproduced exactly
 """

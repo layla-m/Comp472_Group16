@@ -30,6 +30,7 @@ Une soumission contient 10 000 lignes (`id,label`). Le score Kaggle est l'accura
 | iter9 | `iter9.csv` | **0.637** (réseaux + kNN affiné + pseudo-étiquetage) | 0.6817 | **0.659** | **0.661** |
 | iter10a | `iter10a.csv` | 0.6372 (iter9 + réseau a) | 0.6817 | 0.659 | **0.660** |
 | iter10 | `iter10.csv` | 0.6385 (5 réseaux + kNN + pseudo-étiquetage) | 0.6817 | 0.660 | non soumis |
+| iter11 | `iter11.csv` | **0.6515** (iter9 + label spreading) | 0.6817 | **0.667** (moyenne de validation) | à soumettre, ≈ 0.667–0.669 attendu |
 
 La moyenne de validation prédit bien le score Kaggle, en le sous-estimant légèrement : 0.535 contre 0.539 pour iter1, 0.595 contre 0.609 pour iter2. Le réentraînement sur 100 % des données et la moyenne sur 5 seeds apportent probablement ce petit bonus. On se sert donc de la validation comme indicateur.
 
@@ -411,6 +412,40 @@ Le gain disparaît (+1 image sur 4000, c'est du bruit). Le +0.5 point observé a
 **Résultat final (5 réseaux)** : validation des réseaux seuls : a 0.4945, b 0.4547, c 0.4645. Meilleur sous-ensemble : les 5 réseaux, avec un **ensemble à 0.6385** (contre 0.6370 pour iter9, soit +6 images sur 4000). Ce gain est au niveau du bruit, d'autant qu'il est choisi parmi 31 sous-ensembles. iter10.csv est d'accord avec iter9.csv sur 96.5 % des lignes. Kaggle attendu : environ 0.660–0.662, comme iter9.
 
 **Conclusion** : l'ensemble réseaux + kNN plafonne à environ 0.637–0.638 en image (environ 0.661 sur Kaggle). Ajouter des réseaux ne fait plus progresser le score.
+
+## Itération 11 : label spreading sur le graphe kNN, et pistes écartées
+
+**Code** : `label_spreading` dans `comp472/ensemble.py`, paramètres `LS_ITER11` dans `config.py`, recette `python -m comp472 submit iter11`.
+
+**Idée** : le pseudo-étiquetage d'iter9 ne fait qu'un seul passage. Une image de test n'en profite que si un de ses voisins de test est déjà prédit avec confiance. Le **label spreading** (Zhou et al., 2004) propage les étiquettes de proche en proche sur tout le graphe kNN (train + test non étiqueté), jusqu'à convergence. Une étiquette peut ainsi traverser une chaîne d'images de test très proches les unes des autres. C'est exactement la structure observée dans l'analyse du voisinage : beaucoup de vues d'une même scène.
+
+**Algorithme** :
+- Graphe : les k = 20 plus proches voisins de chaque image, avec la géométrie du kNN affiné (puissance 0.4) et un poids exp(−(d − d_min)/τ), τ = 0.05, symétrisé puis normalisé (S = D^−1/2 W D^−1/2).
+- Itérations : F ← α·S·F + (1 − α)·Y0, avec α = 0.35, 30 itérations. Y0 est un one-hot sur les images étiquetées et vaut 0 sur les autres.
+- Le résultat est mélangé à l'ensemble d'iter9 : w·P_iter9 + (1 − w)·F, avec w = 0.5 choisi en validation.
+
+La validation suit le protocole d'iter9 : les 4 000 images de validation jouent le rôle du test non étiqueté, leurs étiquettes ne sont jamais utilisées.
+
+| Réglage (grille k ∈ {10, 20, 30, 40}, τ ∈ {0.02, 0.05, 0.1, 0.2}, α ∈ {0.2 … 0.95}, a priori de l'ensemble β ∈ {0, 0.5, 1}) | Val. image |
+|---|---|
+| iter9 (référence) | 0.6370 |
+| label spreading seul (k=20, τ=0.05, α=0.35) | 0.6202 |
+| **iter9 + label spreading, w = 0.5** | **0.6515** |
+| 10 meilleurs réglages | de 0.648 à 0.6515 |
+
+**Contrôle du sur-réglage** : 4 000 images seulement, et une grille de plus de 50 réglages. On a donc vérifié autrement : on règle (paramètres et w) sur une moitié de la validation et on mesure sur l'autre moitié, 5 tirages × 2 sens. Le label spreading améliore **les 10 moitiés gardées de côté**, de +1.0 point en moyenne (0.638 → 0.648, gains de +0.6 à +1.5). Les réglages choisis sont toujours les mêmes : k = 20 ou 30, τ = 0.05, α = 0.2 ou 0.35, sans a priori. Le gain est donc réel. iter11 est d'accord avec iter9 sur 86 % des images de test. En reprenant l'écart habituel entre validation et Kaggle (+0.2 à +0.3 point), on attend **≈ 0.667** sur Kaggle.
+
+**Pistes testées et écartées** (scripts d'exploration, non intégrés au package) :
+
+| Modèle | Val. | Gain dans l'ensemble |
+|---|---|---|
+| SVM RBF sur features Hellinger (C = 10, γ = 2, meilleur de γ ∈ {1, 2, 4, 8, 16}) | 0.425 | aucun (poids optimal 0.95 à 1 pour iter9) |
+| Régression logistique sur features Hellinger | 0.293 | — |
+| Naive Bayes multinomial sur les comptages exacts | 0.219 | — |
+| Sentiment : régression logistique (C = 0.01) | 0.662 | moins bien que le réseau (0.682) |
+| Sentiment : biais par classe ajustés sur les log-probabilités | — | −0.5 point en moyenne sur les moitiés gardées de côté |
+
+Les modèles globaux (SVM, modèles linéaires, Naive Bayes) sont loin du kNN sur l'image, et ils n'ajoutent rien : la frontière utile est très locale, et le réseau la capte déjà mieux. Sur le sentiment, un modèle linéaire fait moins bien que le réseau, et le réseau prédit déjà les trois classes de façon équilibrée. 0.68 semble bien être la limite de ces embeddings.
 
 ## Pistes restantes
 

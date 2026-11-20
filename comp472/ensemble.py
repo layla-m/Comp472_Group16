@@ -8,6 +8,7 @@ unlabelled points added as extra neighbours -> k-NN again -> blend.
 from dataclasses import dataclass
 
 import numpy as np
+import torch
 
 from .models.knn import neighbours, vote, with_pseudo_labels, Neighbourhood
 
@@ -46,6 +47,32 @@ class QueryNeighbourhoods:
         d, i = neighbours(H_query, H_ref, k_max)
         dB, iB = neighbours(H_query, H_query, k_max, exclude_self=True)
         return cls(Neighbourhood(d, i, y_ref), dB, iB)
+
+
+def label_spreading(H_lab, y_lab, H_unl, params, n_classes):
+    """Label spreading (Zhou et al., 2004) on the k-NN graph of labelled + unlabelled points.
+
+    Edges: k nearest neighbours of every node, weight exp(-(d - d_min) / tau), symmetrised,
+    normalised as S = D^-1/2 W D^-1/2. Iterates F <- alpha * S F + (1 - alpha) * Y0, where Y0 is
+    one-hot on the labelled points and 0 on the unlabelled ones. Labels thus travel through
+    chains of close unlabelled images, which a plain k-NN cannot do.
+    Returns the class distribution of the unlabelled points."""
+    p = params
+    H = np.vstack([H_lab, H_unl]).astype(np.float32)
+    n, n_lab = len(H), len(H_lab)
+    d, idx = neighbours(H, H, p.k, exclude_self=True)
+    w = np.exp(-(d - d[:, :1]) / p.tau).astype(np.float64)
+    rows = np.repeat(np.arange(n), p.k)
+    W = torch.sparse_coo_tensor(np.vstack([rows, idx.ravel()]), w.ravel(), (n, n)).coalesce()
+    W = (W + W.t()).coalesce()
+    dinv = torch.sparse.sum(W, 1).to_dense().rsqrt()[:, None]
+    Y0 = torch.zeros(n, n_classes, dtype=torch.float64)
+    Y0[torch.arange(n_lab), torch.tensor(y_lab)] = 1
+    F = Y0.clone()
+    for _ in range(p.iters):
+        F = p.alpha * dinv * torch.sparse.mm(W, dinv * F) + (1 - p.alpha) * Y0
+    F = F[n_lab:].numpy()
+    return F / (F.sum(1, keepdims=True) + 1e-12)
 
 
 @dataclass

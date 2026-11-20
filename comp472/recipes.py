@@ -11,9 +11,10 @@ from functools import cached_property
 
 import numpy as np
 
-from .config import KNN_ITER9
+from .config import KNN_ITER9, LS_ITER11
 from .data import load_task
-from .ensemble import PseudoLabelEnsemble, QueryNeighbourhoods, accuracy, best_weight
+from .ensemble import (PseudoLabelEnsemble, QueryNeighbourhoods, accuracy, best_weight,
+                       label_spreading)
 from .features import PowerNormalize
 from .store import ProbabilityStore
 from .submission import build_submission, predictions, save_submission
@@ -142,6 +143,20 @@ def iter10a(ctx):
 @recipe("iter10", "meilleur sous-ensemble des 5 réseaux + kNN affiné + pseudo-étiquetage")
 def iter10(ctx):
     return _subset_recipe(ctx, ("iter7_nn", "iter8_nn", "iter10_a", "iter10_b", "iter10_c"))
+
+
+@recipe("iter11", "iter9 + label spreading sur le graphe kNN (train + test non étiqueté)")
+def iter11(ctx):
+    img, s = ctx.image, ctx.image.split
+    val, P_te = ctx.pseudo_label_ensemble(("iter7_nn", "iter8_nn"))
+    geo = PowerNormalize(KNN_ITER9.power, KNN_ITER9.use_idf)
+    # validation: labelled = 80 %, unlabelled = the 20 % (labels never used); test: 100 % + test
+    F_va = label_spreading(geo.fit(s.X_tr)(s.X_tr), s.y_tr, geo(s.X_va), LS_ITER11, img.n_classes)
+    F_te = label_spreading(geo.fit(img.X)(img.X), img.y, geo(img.X_test), LS_ITER11, img.n_classes)
+    w, acc = best_weight(val.proba, F_va, ctx.y_va)
+    ctx.log(f"iter9 val={val.val_acc:.4f}  label spreading alone={accuracy(F_va, ctx.y_va):.4f}  "
+            f"blend w_iter9={w:.2f} -> {acc:.4f}")
+    return RecipeResult(w * P_te + (1 - w) * F_te, acc, {"w_iter9": w})
 
 
 # ---------------------------------------------------------------------------------- running

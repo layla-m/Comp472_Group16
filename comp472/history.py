@@ -27,6 +27,7 @@ ITERATIONS = (
     IterationScore("iter9", "kNN affiné + pseudo-étiq.", 0.637, 0.6817, 0.661),
     IterationScore("iter10a", "+ réseau Hellinger", 0.6372, 0.6817, 0.660),
     IterationScore("iter10", "5 réseaux", 0.6385, 0.6817, None),
+    IterationScore("iter11", "+ label spreading", 0.6515, 0.6817, None),
 )
 
 # Kaggle scores of the other models of the group (no combination unless stated)
